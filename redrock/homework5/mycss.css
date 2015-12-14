@@ -1,0 +1,441 @@
+*{
+	font-family: Microsoft YaHei;
+}
+.head{
+	width: 337px;
+	height: 180px;
+	background-color: rgb(31,50,76);
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 5px 0px 15px #777;
+}
+.title{
+	height: 25px;
+}
+.font{
+	float: left;
+	color: white;
+	font-size: 15px;
+}
+.logo{
+	background-image: url("image/icon.png");
+	background-repeat: no-repeat;
+	background-position: -20px 5px;
+	width: 25px;
+	height: 25px;
+	float: left;
+}
+.setting{
+	background-image: url("image/set.png");
+	width: 18px;
+	height: 18px;
+	float: right;
+	margin: 3px;
+}
+.setting:hover{
+	background-position:-18px 0px;
+}
+.setting:active{
+	background-position: -36px 0px;
+}
+.getmin{
+	background-image: url("image/minimize.png");
+	width: 18px;
+	height: 18px;
+	float: right;
+	margin: 3px;
+}
+.getmin:hover{
+	background-position: -18px 0px;
+}
+.getmin:active{
+	background-position: -36px 0px; 
+}
+.getmax{
+	background-image: url("image/minimode.png");
+	width: 18px;
+	height: 18px;
+	float: right;
+	margin: 3px;
+}
+.getmax:hover{
+	background-position: -18px 0px;
+}
+.getmax:active{
+	background-position: -36px 0px;
+}
+.close{
+	background-image: url("image/close.png");
+	width: 18px;
+	height: 18px;
+	float: right;
+	margin: 3px;
+}
+.close:hover{
+	background-position: -18px 0px;
+}
+.close:active{
+	background-position: -36px 0px;
+}
+.photo{
+	position: relative;
+	left: 10px;
+	top: 5px;
+	width: 120px;
+	height: 100px;
+	float: left;
+}
+.photo img{
+	width:100px;
+	height:100px;
+	border-radius: 5px;
+}
+.main_control{
+	width: 210px;
+	height: 110px;
+	float: right;
+}
+.music_name{
+	width: 210px;
+	height: 22px;
+	color: white;
+	font-size: 15px;
+}
+.music_time{
+	width: 150px;
+	height: 22px;
+	float: left;
+}
+#time_bg{
+	background-color: rgb(160,155,245);
+	margin-top: 11px;
+	width: 99px;
+	height: 5px;
+	float: left;
+}
+#time_point{
+	background-image: url("image/progress_thumb_action.png");
+	width: 28px;
+	height: 28px;
+	float: left;
+	margin-left: -8px;
+}
+#time_on{
+	background-color: rgb(45,88,143);
+	margin-top: 11px;
+	margin-left: -6px;
+	width: 30px;
+	height: 5px;
+	float: left;
+}
+.timer{
+	width: 60px;
+	height: 14px;
+	float: right;
+	margin-top: 8px;
+}
+#time1{
+	background-image: url("image/number.bmp");
+	width: 9px;
+	height: 14px;
+	float: left;
+}
+#time2{
+	background-image: url("image/number.bmp");
+	background-position: -18px 0px;
+	width: 9px;
+	height: 14px;
+	float: left;
+}
+#time3{
+	background-image: url("image/number.bmp");
+	background-position: -90px 0px;
+	width: 9px;
+	height: 14px;
+	float: left;
+}
+#time4{
+	background-image: url("image/number.bmp");
+	background-position: -36px 0px;
+	width: 9px;
+	height: 14px;
+	float: left;
+}
+#time5{
+	background-image: url("image/number.bmp");
+	background-position: -54px 0px;
+	width: 9px;
+	height: 14px;
+	float: left;
+}
+.music_button{
+	height: 70px;
+}
+#prev{
+	position: relative;
+	float: left;
+	background-image: url("image/prev.png");
+	margin-top: 6px;
+	width:45px;
+	height:45px;
+}
+#prev:hover{
+	background-position: -45px 0px;
+}
+#prev:active{
+	background-position: -90px 0px;
+}
+#play{
+	position: relative;
+	float: left;
+	background-image: url("image/play.png");
+	width:56px;
+	height:56px;
+}
+}
+#play:hover{
+	background-position: -56px 0px;
+}
+#play:active{
+	background-position: -112px 0px;
+}
+#play{
+	position: relative;
+	float: left;
+	background-image: url("image/play.png");
+	width:56px;
+	height:56px;
+}
+#next{
+	position: relative;
+	float: left;
+	background-image: url("image/next.png");
+	margin-top: 6px;
+	width:45px;
+	height:45px;
+}
+#next:hover{
+	background-position: -45px 0px;
+}
+#next:active{
+	background-position: -90px 0px;
+}
+#random{
+	position: relative;
+	float: left;
+	background-image: url("image/mode_05.png");
+	margin-top: 6px;
+	width:45px;
+	height:45px;
+}
+#random:hover{
+	background-position: -45px 0px;
+}
+#random:active{
+	background-position: -90px 0px;
+}
+.foot{
+	width: 337px;
+	height: 40px;
+	margin-left: 0px;
+	position: absolute;
+	left: 0px;
+	background-color:  rgb(49,76,111);
+}
+#mute{
+	margin-top: 14px;
+	margin-left: 5px;
+	float: left;
+	background-image: url("image/mute.bmp");
+	width: 15px;
+	height: 15px;
+}
+#browser{
+	margin-top: -19px;
+	float: right;
+	background-image: url("image/browser.png");
+	width: 49px;
+	height: 22px;
+}
+#browser:hover{
+	background-position: -49px 0px;
+}
+#lyric{
+	margin-top: -19px;
+	float: right;
+	background-image: url("image/lyric.png");
+	width: 39px;
+	height: 22px;
+}
+#lyric:hover{
+	background-position: -39px 0px;
+}
+#equalizer{
+	margin-top: -19px;
+	float: right;
+	background-image: url("image/equalizer.png");
+	width: 39px;
+	height: 22px;
+}
+#equalizer:hover{
+	background-position: -39px 0px;
+}
+#playlist{
+	margin-top: -19px;
+	float: right;
+	background-image: url("image/playlist.png");
+	width: 39px;
+	height: 22px;
+}
+#playlist:hover{
+	background-position: -39px 0px;
+}
+.music_time2{
+	width: 100px;
+	height: 15px;
+	margin-left: 25px;
+	margin-top: 14px;
+}
+#time_bg{
+	background-color: rgb(160,155,245);
+	margin-top: 11px;
+	width: 99px;
+	height: 5px;
+	float: left;
+	border-radius: 2px;
+}
+#time_point{
+	background-image: url("image/progress_thumb_action.png");
+	width: 28px;
+	height: 28px;
+	float: left;
+	margin-left: -8px;
+	border-radius: 2px;
+}
+#time_on{
+	background-color: rgb(45,88,143);
+	margin-top: 11px;
+	margin-left: -5px;
+	width: 30px;
+	height: 5px;
+	float: left;
+	border-radius: 2px;
+}
+#time_bg2{
+	background-color: rgb(160,155,245);
+	margin-top: 5px;
+	width: 40px;
+	height: 5px;
+	float: left;
+	border-radius: 2px;
+}
+#time_point2{
+	background-image: url("image/progress_thumb_action.png");
+	width: 28px;
+	height: 28px;
+	float: left;
+	margin-left: -8px;
+	margin-top: -5px;
+	border-radius: 2px;
+}
+#time_on2{
+	background-color: rgb(45,88,143);
+	margin-top: 11px;
+	margin-left: -5px;
+	width: 30px;
+	height: 5px;
+	float: left;
+	margin-top: 5px;
+	border-radius: 2px;
+}
+
+
+
+
+
+
+
+
+
+/*  music list*/
+.list{
+	width: 337px;
+	height: 160px;
+	background-color: rgb(31,50,76);
+	margin-top: 1px;
+	color: white;
+	border-radius: 5px;
+	box-shadow: 5px 5px 15px #777;
+}
+.list_top{
+	background-color: rgb(49,76,111);
+	width: 337px;
+	height: 30px;
+}
+#list_logo{
+	background-image: url("image/playlist_logo.png");
+	position: absolute;
+	background-position: 0px 7px;
+	margin-left: 8px;
+	width: 100px;
+	height: 30px;
+	background-repeat: no-repeat;
+	padding-left: 18px;
+	padding-top: 5px;
+	font-size: 13px;
+}
+#list_close{
+	background-image: url("image/close.png");
+	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
+	width: 18px;
+	height: 18px;
+}
+#list_close:hover{
+	background-position: -18px 0px;
+}
+#list_close:active{
+	background-position: -36px 0px;
+}
+
+
+#list_left{
+	text-align: center;
+	font-size: 13px;
+	width: 62px;
+	height: 99px;
+	float: left;
+}
+#list_middle{
+	background-image: url("image/scrollbar_bar.bmp");
+	width: 13px;
+	height: 99px;
+	float: left;
+}
+#list_button{
+	background-image: url("image/scrollbar_button.bmp");
+	background-position: -1px 0px;
+	width: 13px;
+	height: 16px;
+	margin-top: 40px;
+}
+#list_right{
+	width: 262px;
+	height: 99px;
+	float: right;
+}
+#songs1{
+	font-size:  12px;
+}
+#songs2{
+	font-size:  12px;
+	color: #777;
+}
+#list_toolbar{
+	background-color: rgb(17,33,53);
+	background-image: url("image/playlist_toolbar.png");
+	background-position: 3px 5px;	
+	background-repeat: no-repeat;
+	width: 337px;
+	height: 30px;
