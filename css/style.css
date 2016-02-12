@@ -75,7 +75,7 @@ body{
 	height: 28px;
 	border-radius: 50%;
 	text-align: center;
-	line-height: 28px;
+	line-height: 32px;
 	background-color: #424242;
 	color: #f2f2f2;
 	list-style: none;
@@ -86,6 +86,7 @@ body{
 	color: #424242;
 }
 .sign{
+	line-height: 28px!important;
 	border-radius: 100%!important;
 	width: 80px!important;
 	background-color: #212121!important;
@@ -98,8 +99,7 @@ body{
 
 /*首页中部*/
 #main{
-	padding: 80px 0 0 0;
-	overflow: hidden;
+	padding: 80px 0 0 0;	
 }
 #head-photo{
 	margin: 40px;
@@ -119,27 +119,35 @@ body{
 	text-align: center;
 	padding-bottom: 50px;
 }
-.article-show{
+#bigbox{
+	position: relative;
+}
+.smallbox{
 	float: left;
-	padding: 30px 20px;
-	margin: 10px;
+	padding: 20px 0 0 20px;
+}
+.article-show{
+	padding: 30px 20px 0 20px;
 	width: 260px;
-	height: 330px;
 	background-color: #fff;
 	transition:all 0.5s;
 }
 .article-show:hover{
-	box-shadow: 0 0 12px #ccc;
+	box-shadow: 0 0 12px #ddd;
 }
 .article-show a{
 	color: #222;
+	transition:all 0.5s;
 }
 .article-show >h2{
 	text-align: center;
 }
+.article-show >h2 a:hover{
+	color: #e84c3d;	
+}
 .article-show >p{
 	margin-top: 20px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
     border-bottom: 2px solid #eee;
     font-size: 18px;
     color: #666;
@@ -148,6 +156,8 @@ body{
 	padding: 12px 8px;
 }
 .article-foot span{
+	font-size: 18px;
+	font-weight: lighter;
 	color: #666;
 }
 .iconfont{
@@ -196,6 +206,7 @@ body{
     right: 45px;
     bottom: 38px;
     z-index: 90;
+    display: none;
 }
 .jump-top{
 	display: block;
@@ -264,24 +275,13 @@ body{
 #control-menu a{
 	color: #444;
 }
-#menu-write{
-	background-color: #00d0ff;
-}
-#menu-message{
-	background-color: #9bbd1c;
-}
-#menu-manage{
-	background-color: #ffaa00;
-}
-
-#menu-class{
-	background-color: #ff4086;
-}
-#menu-photos{
-	background-color: #00d0ff;
-}
+#menu-write,
+#menu-message,
+#menu-manage,
+#menu-class,
+#menu-photos,
 #menu-words{
-	background-color: #9bbd1c;
+	background-color: #eee;
 }
 .control-area{
 	margin: 10px;
@@ -294,6 +294,67 @@ body{
 }
 #area-write{
 	display: block;
+}
+
+#area-class{
+	padding: 40px 30px;
+	width: 700px;
+}
+
+#area-class form input{
+	margin-left: 40px;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid #666;
+	outline: none;
+	font-size: 16px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+#area-class form button{
+	height: 26px;
+	font-size: 14px;	
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+.cate-list span{
+	font-size: 16px;
+	color: #333;
+}
+.cate-list i{
+	margin-right: 15px;
+	font-size: 18px;
+	/*color: #ff9800;*/
+	color: #444;
+}
+.cate-list a{
+	float: right;
+	margin-top: 4px;
+	margin-right: 10px;
+	color: #0277bd
+}
+.cate-list a:hover{
+	text-decoration: underline;
+	color: #ffaa00;
+}
+.cate-list{
+	margin: 0 20px;
+	padding: 20px 15px 5px 15px;
+	float: left;
+	width: 250px;
+	border-radius: 5px;
+	cursor: default;
+	font-size: 13px;
+	background-color: #fff;
+	color: #555;
+	overflow: hidden;
+	box-shadow: 0 0 2px 1px #BDBDBD;
+}
+.list-box{
+	margin: 10px 0;
+}
+.list-box li{
+	margin-left: 25px;
+	min-height: 22px;
+	list-style-type: decimal;
 }
 #write-content{
 	padding: 45px 50px 50px 50px;
@@ -324,7 +385,7 @@ body{
 	float: left;
 	margin-top: 15px;
 	display: block;
-	resize:none;
+	resize:vertical;
 	width: 660px;
 	height: 350px;
 	font-size: 14px;
@@ -382,6 +443,12 @@ body{
 .manage-time{
 	font-size: 14px;
 	color: #444;
+}
+.manage-title i{
+	float: left;
+	margin-right: 10px;
+	color: #333;
+	font-size: 14px;
 }
 .manage-title a{
 	color: #444;
@@ -451,4 +518,113 @@ body{
     border: 1px solid #2fa4e7;
     border-radius: 4px;
     display:block;
+}
+
+
+/*文章内容页*/
+#content{
+	width: 600px;
+	padding: 0 15px;
+	float: left;
+	background-color: #fff;
+	word-wrap: break-word;
+}
+#cate_link{
+	width: 280px;
+	float: left;
+}
+#article-content::after{
+	content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#content >article >h1,#content >article >h1 >a{
+	text-align: center;
+    padding:30px 0 14px 0;
+    color: #333333;
+    letter-spacing: 3px;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+#content >article >span{
+	margin-right: 100px;
+	display: block;
+	text-align: right;
+	color: #777;
+    font-family: verdana;
+}
+#content >article >p{
+	padding-top: 8px;
+	letter-spacing: 2px;
+    line-height: 170%;
+    font-size: 15px;
+    color: #333;
+}
+#cate_link >ul >p{
+	margin: 10px 0 15px 40px;
+	color: #444;
+	font-size: 16px;
+}
+#cate_link >ul >li{
+	margin-left: 80px;
+	height: 25px;
+	font-size: 15px;
+	color: #999;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 25px;
+	list-style: circle;
+}
+#cate_link >ul >li>a:hover{
+	text-decoration: underline;
+	color: #222;
+}
+#cate_link >ul >li >a{
+	color: #999;
+	transition: all .3s; 
+}
+#comentsbox >form >input[type="text"]{
+	margin: 0 0 10px 0;
+	border: 1px solid #ddd;
+    height: 42px;
+    padding: 0 15px;
+    width: 100%;
+    color: #aaa;
+    font-size: 14px;
+    display: block;
+    text-indent: 10px;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+}
+#comentsbox >form >textarea{
+	width: 552px;
+    padding: 10px 23px;
+	display: block;
+	border: 1px solid #ddd;
+    color: #aaa;
+    min-height: 120px;
+    font-size: 14px;
+    outline: none;
+    resize:vertical;
+}
+#comentsbox >form >input[type="submit"]{
+	margin: 10px 0 20px 0;
+	width: 80px;
+    height: 34px;    
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #666;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    text-indent: 0;
+    transition: all .5s;
+}
+#comentsbox >form >input[type="submit"]:hover{
+	border: 1px solid #333;
 }

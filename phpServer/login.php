@@ -1,4 +1,4 @@
-﻿    <?php  
+    <?php  
         if(isset($_POST["submit"]) && $_POST["submit"] == "登录")  
         {  
             $user = $_POST["username"];  
@@ -9,13 +9,11 @@
             }  
             else  
             {  
-                $link = mysqli_connect('mysql.hostinger.com.hk', 'u277374159_root', 'r5Tbqe4jl3','u277374159_blog');//链接数据库
-                mysqli_select_db($link,"u277374159_blog");
-                mysqli_query($link,'set names utf8');
+                require_once "conn.php";
                 $sql = "select username,password from user where username = '$_POST[username]' and password = '$_POST[password]'";
                 $result = mysqli_query($link,$sql);
                 $num = mysqli_num_rows($result);
-
+ 
 
 
                 if($num)  
