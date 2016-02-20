@@ -52,10 +52,6 @@
 					mysqli_close($link);
 				?>
 				</div>
-
-				
-				
-			
 		</div>
 	</div>
 	<div id="footer" class="container">

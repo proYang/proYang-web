@@ -1,3 +1,10 @@
+<?php
+	// 登录验证
+	session_start();
+	if(!isset($_SESSION['temp'])){
+			echo "<script>location.href='../pages/login.html'</script>";
+	}
+?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -13,7 +20,7 @@
 				<li class="title-control"><a href="">后台管理</a></li>
 			</ul>
 			<ul id="mylink">
-				<a href="../index.php" class="mylink-li"><li class="sign">退出</li></a>
+				<a href="deleteSession.php" class="mylink-li"><li class="sign">退出</li></a>
 			</ul>
 		</div>
 	</div>
@@ -70,8 +77,10 @@
         				<i class='iconfont'>&#xe611;</i><a href="articleEdit.php?id=<?php echo $row['id']?>"><?php echo $row['title']?></a>
         			</span>
         			<span class="manage-time"><?php echo $row['time']?></span>
-        			<span class="manage-setting"><a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
-                    							 <a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a>
+        			<span class="manage-setting">
+						<a href="articleComment.php?id=<?php echo $row['id']?>">评论(<?php echo $row['comments']?>)</a>
+	        			<a href="articleEdit.php?id=<?php echo $row['id']?>">编辑</a>
+        				<a href="articleDelete.php?id=<?php echo $row['id']?>">删除</a>
                    	</span>
                 </li>
 	        <?php

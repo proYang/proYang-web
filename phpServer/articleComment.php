@@ -4,6 +4,15 @@
     if(!isset($_SESSION['temp'])){
             echo "<script>location.href='../pages/login.html'</script>";
     }
+  // 获取文章评论
+    $id=(int)$_GET['id'];
+    require_once 'conn.php';
+    $sql="select title,content,time,comments from article where id = $id";
+    $re=mysqli_query($link,$sql);
+    $arr=mysqli_fetch_assoc($re);
+    if($arr['comments']<=0){
+        echo "<script>alert('此文章暂无评论');history.go(-1);</script>";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
@@ -38,41 +47,38 @@
         </div>
         <div id="area-write" class="control-area">
             <div id="write-content">
-            <?php 
-                $id=(int)$_GET['id'];
-                require_once 'conn.php';
-                $sql="select id,title,content,category from article where id = '$id'";
-                $re=mysqli_query($link,$sql);//执行sql语句
-                $arr=mysqli_fetch_assoc($re);
-                mysqli_close($link);
-            ?>
-            <form name="article" method="post" action="articleUpdate.php">
-            <select name="selectname" id="write-category">
-                    <!-- 面向对象zxw -->
-                    <?php       
-                        require_once 'conn_db.php';
-                        $query = "select * from terms";                         
-                        $result = $db->query($query);                           
-                        $row_num = $result->num_rows;                           
-                        for($i = 0; $i < $row_num; $i++){
-                            $row = $result->fetch_assoc();
-                            if ($arr['category']==$row['term_id']) {
-                                echo "<option value= '".$row['term_id']."' selected='selected'>".$row['name']."</option>";
-                            } else {
-                                echo "<option value= '".$row['term_id']."'>".$row['name']."</option>";
+
+                <h3><?php echo $arr['title']; ?></h3>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<?php echo mb_substr($arr['content'],0,180,'utf-8')."......";?></p>
+                <div id="comentsbox">
+<!-- 获取文章评论 -->
+                    <ul id="comentsbox_ul">
+                        <div>评论:</div>
+                        <?php
+                            $sql="select * from comment where aid=".$id;
+                            $rec=mysqli_query($link,$sql);
+                            foreach ($rec as $row) {
+                        ?>
+                        <li>
+                            <div class="comment_img"><i class="iconfont">&#xe612;</i></div>
+                            <div class="comment_right">
+                                <div class="comment_name"><?php echo $row['name'];?>
+                                    <span>[<?php echo $row['mail'];?>]</span>
+                                </div>
+                                <div class="comment_time"><?php echo $row['time'];?></div>
+                                <p class="comment_content"><?php echo $row['content'];?></p>
+                            </div>
+                            <div class="comment_delete"><a href="commentDelete.php?cid=<?php echo $row['cid']?>&aid=<?php echo $row['aid']?>">删除</a></div>
+                        </li>
+                        <?php   
                             }
-                        }
-                        $result->free();
-                        $db->close();
-                    ?>
-            </select>
-                <input type="hidden" name="id" value="<?php echo $arr['id']?>"/>
-                <input type="text" name="title" id="write-title" value="<?php echo $arr['title']?>"/>
-                <textarea name="content"><?php echo $arr['content']?></textarea>
-                <input id="write-submit" type="submit" value="确认修改"/>
-            </form>
+                        ?>
+                    </ul>
+                </div>
+                <?php
+                    mysqli_close($link);
+                ?>
             </div>
         </div>
-    </div>
 </body>
 </html>

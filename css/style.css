@@ -68,8 +68,11 @@ body{
 	float: right;
 	margin: 10px 30px 0 0px;
 }
-#mylink li{
+#mylink >a{
+	overflow: hidden;
 	float: left;
+}
+#mylink >a >li{
 	margin-left: 5px;
 	width: 28px;
 	height: 28px;
@@ -244,7 +247,7 @@ body{
 	overflow: hidden;
 }
 #control-menu{
-	margin: 10px 0 0 10px;
+	margin: 10px 0 10px 10px;
 	float: left;
 	width: 170px;
 	background-color: #fff;
@@ -394,6 +397,12 @@ body{
 	outline:none;
 	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
 }
+#write-content >h3{
+	text-align: center;
+}
+#write-content >p{
+	margin-top: 10px;
+}
 #write-submit{
 	float: right;
 	margin: 10px 40px 40px auto;
@@ -431,16 +440,25 @@ body{
 .manage-setting{
 	margin-top: -1px;
 	float: right;
-	padding-right: 30px;
+	/*padding-right: 30px;*/
 }
 .manage-setting >a{
 	margin-left: 10px;
 	color: #666;
+	/*color: #039be5;*/
 	font-size: 15px;
 }
 .manage-setting >a:hover{
-	color: #ffaa00;
+	/*color: #ffaa00;*/
+	color: #f57c00;
+	/*color: #e53935;*/
 	text-decoration: underline;
+}
+.manage-setting :first-child:hover{
+	color: #1976d2;
+}
+.manage-setting :last-child:hover{
+	color: #e53935;
 }
 .manage-time{
 	font-size: 14px;
@@ -456,10 +474,13 @@ body{
 	color: #444;
 	font-size: 16px;
 	float: left;
-	width: 420px;
+	width: 360px;
 }
 .manage-title a:hover{
 	text-decoration: underline;
+}
+#area-words{
+	padding: 30px 50px 20px 50px;
 }
 
 /*登录框*/
@@ -590,6 +611,16 @@ body{
 #article-pages{
 	border-bottom: 1px solid #ddd;
 }
+#comentsbox_ul{
+	margin-bottom: 30px!important;
+}
+#comentsbox_ul >div{
+	color: #000;
+	font-weight: 700;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+}
 #comentsbox >ul{
 	min-height: 40px;
 	margin-bottom: 100px;
@@ -599,9 +630,25 @@ body{
 	padding:20px 0;
 	border-bottom: 1px solid #ddd;
 }
-.comment_img,.comment_right{
+.comment_img,
+.comment_right{
 	float: left;
 	margin-right: 10px;
+}
+.comment_right{
+	width: 540px;
+}
+.comment_delete{
+	float: left;
+	margin-top: 20px;
+}
+.comment_delete >a{
+	color: #039be5;
+    font-size: 15px;
+}
+.comment_delete >a:hover{
+	color: #e53935;
+    text-decoration: underline;
 }
 .comment_img>i{
 	font-size: 40px;
@@ -613,6 +660,12 @@ body{
 	font-size: 15px;
 	font-weight: 600;
 	letter-spacing: 1px;
+}
+.comment_name>span{
+	margin-left: 5px;
+	color: color: #999;
+	font-weight: 100;
+	font-size: 14px;
 }
 .comment_time{
 	margin-top: 3px;
@@ -668,8 +721,10 @@ body{
 #comentsbox >form >input[type="submit"]:hover{
 	border: 1px solid #333;
 }
-.article_comment,
-.bdsharebuttonbox{
+#share_button_box{
+	display: none;
+}
+.article_comment{
 	margin:0 4px;
 	float: left;
 	cursor: pointer;
@@ -677,12 +732,6 @@ body{
 .article_comment i{	
 	font-size: 22px!important;
 	font-weight: 900!important;
-}
-.bdsharebuttonbox{
-	display: none;
-}
-.bdsharebuttonbox>a{
-	margin: 0 6px 0 0!important;
 }
 #pre-arcitle,
 #next-arcitle{
@@ -747,3 +796,236 @@ body{
 #next-arcitle>span{
 	right: 48px;
 }
+
+
+/*个人简介*/
+#personal_left{
+	width: 820px;
+	padding: 0 70px;
+}
+#personal_con{
+	overflow: hidden;
+	background-color: #fff;
+}
+#myword >h4{
+	padding:20px 70px;
+}
+#personal_left >h4{
+	padding:10px 0;
+}
+#personal_left >p,
+#personal_motto{
+	color: #555;
+}
+#personal_left >p{
+	letter-spacing: 2px;
+	word-wrap: break-word;
+	padding: 0 15px 0 20px;
+}
+#imessage >p{
+	color: #777;
+	padding: 2px;
+	text-align: center;
+}
+#imessage >p >a{
+	color: #222;
+}
+#personal_share{
+	padding: 0 336px;
+	height: 32px;
+}
+#personal_con >h4{
+	padding: 20px 0;
+	text-align: center;
+}
+#personal_con{
+	padding-bottom: 60px;
+}
+#area-messgae{
+	width:660px;
+	padding: 30px 50px 20px 50px;
+}
+#imessage_form>div{
+	position: relative;
+	padding: 10px 0;
+}
+#imessage_form >div >span{
+	padding-right: 10px;
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+}
+#imessage_form >div >input{
+    border: 1px solid #999;
+    padding: 0 10px;
+    height: 28px;
+    width: 250px;
+    font-size: 14px;
+    display: inline-block;
+    outline: none;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+#imessage_form >div >textarea{
+	margin-left: 90px;
+	border: 1px solid #999;
+    padding: 5px 10px;
+    width: 530px;
+    display: inline-block;
+    font-size: 14px;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+#imessage_textarea1{
+	resize: none;
+	height: 50px;
+}
+#imessage_textarea2{
+	resize: none;
+	height: 200px;
+}
+.imessage_span{
+	position: absolute;
+	top: 10px;
+}
+
+/*足迹*/
+#time_body{
+	background: url(../img/1.jpg) center 0 no-repeat fixed;
+	object-fit: cover;
+}
+.time_header{
+	height: 170px;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,.2);
+    width: 960px;
+    margin: 0px auto;
+}
+.time_header_weather{
+	display: inline-block;
+	margin-left: 450px;
+}
+.time_header >p{
+	width: 400px;
+	color: #e1f5fe;
+	letter-spacing: 3px;
+	line-height: 22px;
+	margin-left: 500px;
+	mask-type: -10px;
+}
+.time_header_icon{
+	display: inline-block;
+	margin-left: 50px;
+	width: 80px;
+    height: 80px;
+    padding: 10px;
+    /*background-color: rgba(255,255,255,.2);*/
+    /*background-color: #b3dae9;*/
+    overflow: hidden;
+    color: #fff;
+    font-size: 40px;
+    line-height: 40px;
+}
+#blog_list{
+	position: relative;
+}
+.time_content{
+	position: relative;
+	padding: 5px 0 0 239px;
+	background: url(../img/spine.png) repeat-y 200px 0;
+}
+.content_item_time{
+	height: 30px;
+	width: 125px;
+	line-height: 30px;
+	color: #e0e0e0;
+	text-align: center;
+	font-size: 14px;
+	position: relative;
+	left: -180px;
+	top: 29px;
+	border-radius: 40px 0;
+	background: rgba(0,0,0,.3);
+	transition: all .5s;
+	box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+.content_item{
+	margin: 40px 0;
+    width: 630px;
+    border-radius: 4px;
+    position: relative;
+    background-color: #fff;
+}
+.content_item_icon_arrow{
+	position: absolute;
+	left: -10px;
+	top: 20px;
+	height: 0;
+	border-width: 10px;
+	border-color: transparent #fff transparent transparent;
+	border-style: solid;
+	transition: left .5s;
+}
+.content_item_icon_dot{
+	width: 11px;
+	height: 11px;
+	border-radius: 11px;
+	background-color: #fff;
+	position: absolute;
+	top: 25px;
+	left: -43px;
+}
+.content_item_icon_dot_child{
+	width: 7px;
+	height: 7px;
+	border-radius: 7px;
+	background-color: #b3dae9;
+	position: absolute;
+	top:2px;
+	left: 2px;
+	opacity: 0;
+	transition: opacity .5s;
+}
+.content_item:hover .content_item_icon_dot_child{
+	opacity: 1;
+}
+.content_item:hover .content_item_icon_arrow{
+	left: -20px;
+}
+.content_item:hover .content_item_time{	
+	box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+.content_item_arcitle{
+	margin: -20px 12px 0 12px;
+}
+.time-foot{
+	height: 30px;
+	padding-right: 10px;
+	line-height: 30px;
+	text-align: right;
+}
+.time-foot>a,
+.content_item_arcitle>p{
+    color: #888;
+}
+.content_item_arcitle >h4 >a{
+	position: relative;
+	left:0;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	padding: 0 32px;	
+    color: #555;
+    transition: left .5s;
+}
+.content_item_arcitle >h4 >a:hover{
+	left: 36px;	
+	color: #e84c3d;
+}
+/*.time-show{
+	background: #fefefe;
+    box-shadow: 0px 1px 0px rgba(255,255,255,.1), inset 0px 1px 1px rgba(214, 214, 214, 0.7);
+    width: 730px;
+    border-radius: 6px;
+    position: relative;
+    padding: 20px 0;
+    margin: 20px 0;
+}*/

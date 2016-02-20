@@ -1,4 +1,9 @@
 <?php
+// 验证登录
+    session_start();
+    if(!isset($_SESSION['temp'])){
+            echo "<script>location.href='../pages/login.html'</script>";
+    }
     require_once 'conn.php';
     $id=(int)$_GET['id'];
     $sql="delete from article where id = '$id'";
@@ -13,3 +18,4 @@
         echo "<script>alert('删除失败');</script>";
         echo "<script>location.href='controlManage.php'</script>";
     }
+    mysqli_close($link);
