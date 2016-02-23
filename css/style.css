@@ -138,9 +138,6 @@ body{
 .article-show:hover{
 	box-shadow: 0 0 12px #ddd;
 }
-.article-show:hover>img{
-	opacity: 0.7;
-}
 .article-show a{
 	color: #222;
 	transition:all 0.5s;
@@ -148,8 +145,13 @@ body{
 .article-show >img{	
 	margin-top: 15px;
 	width: 260px;
-	height: 100%;
+	height: auto;
+	/*height: 150px;*/
 	transition: opacity 1s;
+}
+
+.article-show:hover>img{
+	opacity: 0.7;
 }
 .article-show >h2{
 	text-align: center;
