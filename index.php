@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
 	<title>myBlog</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script data-main="scripts/pages/index.js" src="scripts/lib/require.js"></script>
 </head>
 <body>
 	<div id="top-fix">
@@ -33,12 +34,8 @@
 				$sql="select * from user";
 				$reu=mysqli_query($link,$sql);
 				$arru = mysqli_fetch_assoc($reu);
-				function personalUrl($val)
-				{
-				    return substr($val,3);
-				}
 			?>
-			<div id="head-photo"><img src="<?php echo personalUrl($arru['ilogo']);?>" alt="头像"></div>
+			<div id="head-photo"><img src="<?php echo $arru['ilogo'];?>" alt="头像"></div>
 			<acticle id="myword">
 <!-- 从数据库获取用户最新签名 -->
 			<p id="personal_motto"><?php echo $arru['motto'];?></p>
@@ -60,7 +57,7 @@
 							if (!$row['cover']==0) {
 								// 判断封面是否存在
 								$temp=mb_substr($row['content_txt'],0,90,'utf-8')."...";
-								echo "<img src='".personalUrl($row['cover'])."'>";
+								echo "<img src='".$row['cover']."'>";
 								echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$temp."</p>";
 		                	}else{
 		                		$temp=mb_substr($row['content_txt'],0,160,'utf-8')."...";
@@ -93,14 +90,5 @@
 		</div>
 		<p>© 2016 proYang&PeiLi</p>
 	</div>
-	<div id="goTop">
-		<a class="jump-top"></a>
-	</div>
-	<script type="text/javascript" src="js/waterfall.js"></script>
-	<script>
-		window.onload=function(){
-			waterfall('bigbox','smallbox');
-		}
-	</script>
 </body>
 </html>
